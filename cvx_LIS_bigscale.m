@@ -37,7 +37,7 @@ for i=1:1:total_num
     R3 = rou*(hd')*G*Dh;
     R = [R1,R2;R3,0];
     cvx_begin sdp quiet
-        variable Q(N+1,N+1) hermitian toeplitz;
+        variable Q(N+1,N+1) hermitian;
         minimize (-real(trace(R*Q)));
         subject to
             diag(Q)==1;
