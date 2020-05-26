@@ -9,11 +9,11 @@ d0 = 8*rand(total_num,1);
 d1 = 1+5*rand(total_num,1);  
 dBU = sqrt(d0.^2+d1.^2);
 dLU = sqrt((8-d0).^2+d1.^2);
-PL_BU =  -20.4*log10(dBU);
+PL_BU =  -20.4*log10(dBU)-30;
 big_scale_BU_linear = sqrt(10.^(PL_BU/10));
-PL_LU =  -20.4*log10(dLU);
+PL_LU =  -20.4*log10(dLU)-30;
 big_scale_LU_linear = sqrt(10.^(PL_LU/10));
-PL_BL = -20.4*log10(ones(total_num,1)*8);
+PL_BL = -20.4*log10(ones(total_num,1)*8)-30;
 big_scale_BL_linear = sqrt(10.^(PL_BL/10));
 
 G_list = 1/sqrt(2)*(randn(total_num,M,N)+1j*randn(total_num,M,N));
